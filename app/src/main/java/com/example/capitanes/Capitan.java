@@ -43,13 +43,31 @@ public class  Capitan {
                 int capitan = 13;
                 int segundos = -1;
 
+                String nombreCapitanes;
+
                 @Override
                 public void run() {
                     if (segundos<0) {
                         segundos = random.nextInt(3)+3;
                     }
+                    switch (capitan){
+                        case 13: nombreCapitanes = "Rukia Kuchiki"; break;
+                        case 12: nombreCapitanes = "Mayuri Kurotsuchi"; break;
+                        case 11: nombreCapitanes = "Kenpachi Zaraki"; break;
+                        case 10: nombreCapitanes = "Tōshirō Hitsugaya"; break;
+                        case 9: nombreCapitanes = "Kensei Muguruma"; break;
+                        case 8: nombreCapitanes = "Lisa Yadōmaru"; break;
+                        case 7: nombreCapitanes = "Tetsuzaemon Iba"; break;
+                        case 6: nombreCapitanes = "Byakuya Kuchiki"; break;
+                        case 5: nombreCapitanes = "Shinji Hirako"; break;
+                        case 4: nombreCapitanes = "Isane Kotetsu"; break;
+                        case 3: nombreCapitanes = "Rōjūrō Ōtoribashi"; break;
+                        case 2: nombreCapitanes = "Suì-Fēng"; break;
+                        case 1: nombreCapitanes = "Syunsui Kyōraku"; break;
+
+                    }
                     segundos--;
-                    capitanListener.cuandoDeLaOrden("Capitan" + capitan + ":" + (segundos == 0 ? "CAMBIO" : segundos));
+                    capitanListener.cuandoDeLaOrden("Capitan" + capitan + ":" + (segundos == 0 ? "CAMBIO" : "Capitan del escuadron Nº"+capitan+" "+nombreCapitanes));
                     if(segundos==0)capitan--;
                 }
             }, 0, 1, SECONDS);
